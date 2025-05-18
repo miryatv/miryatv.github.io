@@ -41,7 +41,14 @@
       <h2>🏅 Earned Rewards</h2>
       <ul id="reward-list"></ul>
     </section>
-  </main>
+  
+<section id="spin-wheel">
+  <h2>🎡 Spin to Win</h2>
+  <button onclick="spinWheel()">🎯 Spin the Wheel</button>
+  <div id="wheel-result" style="margin-top: 1rem;"></div>
+</section>
+
+</main>
   <footer>
     <p>&copy; 2025 Mirya Media</p>
   </footer>
@@ -66,7 +73,24 @@
         document.getElementById("reward-list").appendChild(reward);
       }
     }
-  </script>
+  
+function spinWheel() {
+  const outcomes = [
+    '🎉 10% Off!',
+    '💖 Loyalty Badge!',
+    '🌸 Free Shipping!',
+    '🎁 Mystery Gift!',
+    '⭐ Bonus XP!',
+    '😿 Try Again...'
+  ];
+  const result = outcomes[Math.floor(Math.random() * outcomes.length)];
+  document.getElementById('wheel-result').innerText = result;
+  if (result === '⭐ Bonus XP!') {
+    gainXP(100);
+  }
+}
+
+</script>
 
 <script>
   const canvas = document.createElement('canvas');
@@ -102,6 +126,23 @@
     requestAnimationFrame(draw);
   }
   draw();
+
+function spinWheel() {
+  const outcomes = [
+    '🎉 10% Off!',
+    '💖 Loyalty Badge!',
+    '🌸 Free Shipping!',
+    '🎁 Mystery Gift!',
+    '⭐ Bonus XP!',
+    '😿 Try Again...'
+  ];
+  const result = outcomes[Math.floor(Math.random() * outcomes.length)];
+  document.getElementById('wheel-result').innerText = result;
+  if (result === '⭐ Bonus XP!') {
+    gainXP(100);
+  }
+}
+
 </script>
 
 </body>

@@ -49,3 +49,29 @@ li:hover {
   transform: scale(1.02);
   color: #ff4f91;
 }
+
+.xp-bar {
+  background: #ffd9ec;
+  border-radius: 12px;
+  height: 20px;
+  overflow: hidden;
+  margin: 1rem 0;
+  transition: width 0.4s ease-in-out;
+}
+.xp-fill {
+  background: #ff6fa3;
+  height: 100%;
+  transition: width 0.4s ease-in-out;
+}
+button {
+  background-color: #ff85b3;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ff6fa3;
+}
