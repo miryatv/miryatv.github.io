@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap' rel='stylesheet'>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mirya's Quest Hub</title>
@@ -20,7 +21,8 @@
   <header>
     <h1>🌸 Mirya's Quest Hub</h1>
     <p>Complete quests, earn rewards, and explore the Miryaverse!</p>
-  </header>
+  <img src="images/mircat-placeholder.png" alt="Mircat mascot" style="display:block; margin: 2rem auto; width: 180px;" />
+</header>
   <main>
     <section id="quests">
       <h2>📋 Quests</h2>
@@ -65,5 +67,42 @@
       }
     }
   </script>
+
+<script>
+  const canvas = document.createElement('canvas');
+  canvas.id = 'sakura';
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+  window.onresize = () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  };
+  const petals = Array.from({ length: 50 }, () => ({
+    x: Math.random() * width,
+    y: Math.random() * height,
+    r: Math.random() * 3 + 2,
+    d: Math.random() * 1 + 0.5
+  }));
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = 'rgba(255,182,193,0.8)';
+    petals.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+      p.y += p.d;
+      p.x += Math.sin(p.y * 0.01);
+      if (p.y > height) {
+        p.y = -10;
+        p.x = Math.random() * width;
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+</script>
+
 </body>
 </html>

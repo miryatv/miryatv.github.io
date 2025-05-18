@@ -30,3 +30,22 @@ ul li.completed {
   text-decoration: line-through;
   color: #999;
 }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff0f5;
+  background-image: linear-gradient(to bottom, #fff0f5, #ffe4ec);
+  margin: 0;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+h1, h2 {
+  color: #ff6fa3;
+}
+button, li {
+  transition: all 0.3s ease;
+}
+li:hover {
+  transform: scale(1.02);
+  color: #ff4f91;
+}
