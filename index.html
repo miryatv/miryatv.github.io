@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <nav>
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="mediakit.html">Media Kit</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="merch.html">Merch</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
   <header>
     <h1>🌸 Mirya's Quest Hub</h1>
     <p>Complete quests, earn rewards, and explore the Miryaverse!</p>
@@ -15,26 +25,45 @@
     <section id="quests">
       <h2>📋 Quests</h2>
       <ul>
-        <li>🌸 Cherry Blossom Hunt – 10% off reward</li>
-        <li>🎨 Fan Feature – Loyalty badge + 15% off</li>
-        <li>🌟 Festival Drop Prep – Early access reward</li>
+        <li id="quest1" onclick="completeQuest('quest1')">🌸 Cherry Blossom Hunt – 10% off reward</li>
+        <li id="quest2" onclick="completeQuest('quest2')">🎨 Fan Feature – Loyalty badge + 15% off</li>
+        <li id="quest3" onclick="completeQuest('quest3')">🌟 Festival Drop Prep – Early access reward</li>
       </ul>
     </section>
     <section id="xp">
       <h2>📈 XP Progress</h2>
-      <div class="xp-bar"><div class="xp-fill" style="width: 60%;"></div></div>
-      <p>Level 3 – 650 XP</p>
+      <div class="xp-bar"><div class="xp-fill" style="width: 0%;"></div></div>
+      <p id="xp-display">Level 1 – 0 XP</p>
     </section>
     <section id="rewards">
       <h2>🏅 Earned Rewards</h2>
-      <ul>
-        <li>🎉 15% Off – Fan Feature</li>
-        <li>🏅 Loyalty Badge – Community Hero</li>
-      </ul>
+      <ul id="reward-list"></ul>
     </section>
   </main>
   <footer>
     <p>&copy; 2025 Mirya Media</p>
   </footer>
+  <script>
+    let xp = 0;
+    function gainXP(amount) {
+      xp += amount;
+      const bar = document.querySelector(".xp-fill");
+      const percent = Math.min((xp / 1000) * 100, 100);
+      bar.style.width = percent + "%";
+      document.getElementById("xp-display").innerText = `Level ${Math.floor(xp / 200) + 1} – ${xp} XP`;
+    }
+
+    function completeQuest(questId) {
+      const quest = document.getElementById(questId);
+      if (!quest.classList.contains("completed")) {
+        quest.classList.add("completed");
+        quest.innerText += " ✔️";
+        gainXP(150);
+        const reward = document.createElement("li");
+        reward.innerText = "🎁 " + quest.innerText;
+        document.getElementById("reward-list").appendChild(reward);
+      }
+    }
+  </script>
 </body>
 </html>

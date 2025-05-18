@@ -21,3 +21,12 @@ nav {
   color: #ff6fa3;
   text-decoration: underline;
 }
+
+ul li {
+  cursor: pointer;
+  margin: 0.5rem 0;
+}
+ul li.completed {
+  text-decoration: line-through;
+  color: #999;
+}
