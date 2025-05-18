@@ -1,1 +1,23 @@
 body { font-family: 'Segoe UI', sans-serif; background-color: #fff0f5; color: #4e2a4e; padding: 2rem; }
+nav {
+  background-color: #ffd6e7;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.navbar li a {
+  text-decoration: none;
+  color: #4e2a4e;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.navbar li a:hover {
+  color: #ff6fa3;
+  text-decoration: underline;
+}
