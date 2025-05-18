@@ -1,0 +1,25 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f5;
+  color: #4e2a4e;
+  margin: 0;
+  padding: 2rem;
+}
+header, main, footer {
+  max-width: 800px;
+  margin: auto;
+}
+header h1 {
+  color: #ff6fa3;
+}
+.xp-bar {
+  background: #ffd9ec;
+  border-radius: 12px;
+  height: 20px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+.xp-fill {
+  background: #ff6fa3;
+  height: 100%;
+}
